@@ -1,0 +1,10 @@
+<h1> <%= @task[:title] %> </h1>
+<p> <%= @task[:details] %> </p>
+<p>    <% if @task[:completed] == true %>
+      <i class="far fa-check-square"></i> This task is completed
+    <% else %>
+      <i class="far fa-square"></i> This task is not yet completed
+    <% end %>
+  </p>
+
+<%= link_to "Back to overview", tasks_path %>
