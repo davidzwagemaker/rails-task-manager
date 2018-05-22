@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <div id="sidebar" class="text-center text-white">
+
+    <img src="https://design.trello.com/img/mascots/logo-graphic-2.png" alt="" id="logo">
+    <hr>
+    <%= link_to "All tasks", tasks_path, class: "text-white"  %>
+    <hr>
+    <%= link_to "Add task", new_task_path, class: "text-white" %>
+    </div>
+
+    <div id="content">
     <%= yield %>
+    </div>
+
   </body>
 </html>

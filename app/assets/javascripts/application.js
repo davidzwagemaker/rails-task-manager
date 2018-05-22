@@ -14,3 +14,15 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".card-tag").forEach((tag) => {
+    tag.addEventListener("click", (event) => {
+      console.log(event.target);
+      console.log(event.target.classList)
+      // event.target.classList.toggle("not-completed");
+      // event.target.classList.toggle("completed");
+    })
+  })
+});

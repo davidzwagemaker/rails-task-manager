@@ -1,17 +1,22 @@
 <h1>Your task overview:</h1>
 
 <% @tasks.each do |task| %>
-  <h4>
-    <% if task[:completed] == true %>
-      <i class="far fa-check-square"></i>
+  <div class="card">
+    <div class="card-title">
+      <h4><strong> <%= link_to task[:title], task_path(task) %> </strong></h4>
+    </div>
+
+    <div class="card-details">
+      <em> <%= task.details %> </em>
+    </div>
+
+    <% if task.completed? %>
+      <a href="#" class="card-tag completed text-center" data-id="<%= task.id %>">Done</a>
+      <!-- <div class="card-tag completed text-center">Done</div> -->
     <% else %>
-      <i class="far fa-square"></i>
+      <a href="#" class="card-tag not-completed text-center" data-id="<%= task.id %>">To Do</a>
     <% end %>
 
-    <%= link_to task[:title], task_path(task) %>
-  </h4>
+
+  </div>
 <% end %>
-
-<%= link_to "Add a new task", new_task_path %>
-
-
